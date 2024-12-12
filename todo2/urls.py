@@ -2,10 +2,7 @@ from django.urls import path
 
 from . import views
 
-app_name = "event"
-
 urlpatterns = [
-    path("", views.index, name="index"),
     path("list/", views.list, name="list"),
-    path("form/", views.form, name="form"),
+    path("edit/", views.edit, name="edit"),
 ]

@@ -1,12 +1,14 @@
-<!-- {% if latest_question_list %}
-<ul>
-    {% for question in latest_question_list %}
-    <li><a href="/event/{{ question.id }}/">{{ question.question_text }}</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No event are available.</p>
-{% endif %} -->
+python manage.py runserver
+
+mysql.server start
+
+mysql -u root
+
+use events
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -20,7 +22,7 @@
 </head>
 
 <body>
-    <form method="post" action="https://youtube.com">
+    <form method="post" action="">
         <h1>30秒で作れる！カンタン出欠表</h1>
         <hr>
         <article>
@@ -59,10 +61,17 @@
             </div>
         </article>
         <footer>
-            <p><a href="https://youtube.com">利用規約</a>に同意のうえ、</p>
+            <p><a href="">利用規約</a>に同意のうえ、</p>
             <input type="submit" value="出欠表をつくる">
         </footer>
     </form>
 </body>
 
 </html>
+
+
+フォームを出す
+登録ボタンを押したら登録される（リストのページにアクセスしたら追加）
+リスト一覧を表示
+リスト＿１を押したら詳細を表示
+利用規約ページ作成

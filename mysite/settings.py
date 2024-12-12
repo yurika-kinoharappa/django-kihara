@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
-    "polls.apps.PollsConfig",
+    "todo1.apps.Todo1Config",
+    "todo2.apps.Todo2Config",
     "event.apps.EventConfig",
+    "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

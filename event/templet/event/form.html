@@ -1,0 +1,5 @@
+<form action="{% url 'event:index' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="title">
+    <input type="submit" value="Add">
+</form>
