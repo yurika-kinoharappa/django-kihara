@@ -1,13 +1,13 @@
-{% load static %}
+<!-- {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <form action="{% url 'todo1:register' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="event_name">
+    <input type="text" name="name">
     <input type="submit" value="Add">
-</form>
+</form> -->
 
-{% for todo in all_todo %}
+{% for event in all_e %}
 <ul>
-    <li>{{ todo.id }}{{ todo.title }}</li>
+    <li>{{ event.name }}{{ event.memo}}</li>
 </ul>
 {% endfor %}

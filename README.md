@@ -6,72 +6,8 @@ mysql -u root
 
 use events
 
+poetry shell
 
 
-
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django課題</title>
-    {% load static %}
-
-    <link rel="stylesheet" href="{% static 'event/style.css' %}">
-</head>
-
-<body>
-    <form method="post" action="">
-        <h1>30秒で作れる！カンタン出欠表</h1>
-        <hr>
-        <article>
-            <div class="event">
-                <div class="st_and">
-                    <h4>STEP1</h4>
-                    <h3>イベント名</h3>
-                </div>
-                <input type="text" placeholder="今期もお疲れ様飲み会">
-                <div class="memo">
-                    <p>メモ(任意)</p>
-                    <textarea placeholder="例) 飲み会の日程調節をしましょう！出欠〆切は◯日 など"></textarea>
-                </div>
-            </div>
-            <div class="nittei">
-                <div class="st_and">
-                    <h4>STEP2</h4>
-                    <h3>日程候補</h3>
-                </div>
-                <span>カレンダーをクリックすると日程候補に日付が入ります。</span><br>
-                <div class="tatoe">
-                    <div class="rei">
-                        <span>例:</span>
-                    </div>
-                    <div class="day_time">
-                        <li>8/7(月) 19:00～</li>
-                        <li>8/8(火) 20:00～</li>
-                    </div>
-                </div>
-                <textarea placeholder="候補の区切りは改行で判断されます。内容は直接編集できます。"></textarea>
-            </div>
-            <div class="karenda-">
-                <input type="checkbox" id="tuika">
-                <label for="tuika">日付の後に時刻を追加する</label><br>
-                <input type="text" class="h_text" placeholder="19:00~">
-            </div>
-        </article>
-        <footer>
-            <p><a href="">利用規約</a>に同意のうえ、</p>
-            <input type="submit" value="出欠表をつくる">
-        </footer>
-    </form>
-</body>
-
-</html>
-
-
-フォームを出す
-登録ボタンを押したら登録される（リストのページにアクセスしたら追加）
-リスト一覧を表示
 リスト＿１を押したら詳細を表示
 利用規約ページ作成

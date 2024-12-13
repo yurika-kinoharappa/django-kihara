@@ -20,7 +20,6 @@ def register(request):
     title = request.POST.get("title")
     if title is None or title == "":
         return HttpResponseRedirect(reverse("todo1:list"))
-
     new_todo = models.Todo(title=title)
     new_todo.save()  # 登録する
     return HttpResponseRedirect(reverse("todo1:list"))  # 表示する

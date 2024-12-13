@@ -5,7 +5,7 @@ from . import views
 app_name = "event"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.form, name="form"),
     path("list/", views.list, name="list"),
-    path("form/", views.form, name="form"),
+    path("index/", views.index, name="index"),
 ]
