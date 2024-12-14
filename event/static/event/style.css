@@ -29,7 +29,7 @@ footer {
 footer input {
     padding: 18px 500px;
     border-radius: 15px;
-    font-size: 35px;
+    font-size: 25px;
     background-color: green;
     border: none;
     color: white;
@@ -53,7 +53,7 @@ h3 {
 textarea {
     width: 400px;
     height: 200px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 footer a {
@@ -85,7 +85,7 @@ li {
 .event input {
     width: 400px;
     height: 40px;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .nittei {
@@ -110,5 +110,5 @@ li {
 }
 
 .karenda- input {
-    font-size: 28px;
+    font-size: 25px;
 }

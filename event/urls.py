@@ -7,5 +7,7 @@ app_name = "event"
 urlpatterns = [
     path("", views.form, name="form"),
     path("list/", views.list, name="list"),
-    path("index/", views.index, name="index"),
+    path("sinnki/", views.sinnki, name="sinnki"),
+    path("kiyaku/", views.kiyaku, name="kiyaku"),
+    path("", views.kiyaku, name="kiyaku2"),
 ]

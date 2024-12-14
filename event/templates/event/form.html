@@ -1,9 +1,3 @@
-<!-- <form action="{% url 'event:index' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="title">
-    <input type="submit" value="Add">
-</form> -->
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -57,7 +51,7 @@
             </div>
         </article>
         <footer>
-            <p><a href="">利用規約</a>に同意のうえ、</p>
+            <p><a href="{% url 'event:kiyaku' %}">利用規約</a>に同意のうえ、</p>
             <input type="submit" value="出欠表をつくる">
         </footer>
     </form>

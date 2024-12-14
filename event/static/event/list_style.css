@@ -1,0 +1,49 @@
+li {
+    list-style: none;
+    font-size: 30px;
+}
+
+html {
+    text-align: center;
+    background-color: #f0fff0;
+    margin: 20px 2%;
+}
+
+.lst {
+    margin-top: 80px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.lst hr {
+    margin-bottom: 25px;
+    margin-top: -15px;
+    width: 30%;
+    height: 1px;
+    color: silver;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 60px;
+    color: #696969;
+    margin-bottom: 0px;
+
+}
+
+hr {
+    height: 3px;
+    background-color: #808080;
+    border: none;
+}
+
+.form input {
+    padding: 18px 500px;
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: green;
+    border: none;
+    color: white;
+}

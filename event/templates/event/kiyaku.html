@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'event/kiyaku.css' %}">
+</head>
+
+<body>
+    <form action="{% url 'event:kiyaku2' %}" method="post">
+        {% csrf_token %}
+        <h1>利用規約</h1>
+        <p>人が傷つくことは書いてはいけません</p>
+        <input type="submit" value="作成ページに戻る">
+    </form>
+</body>
+
+</html>
