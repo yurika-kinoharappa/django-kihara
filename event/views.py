@@ -18,14 +18,18 @@ def list(request):
     if title is None or title == "":
         return HttpResponseRedirect(reverse("event:form"))
     e = models.EventConfig(name=title)
-    e.save()
+    # e.save()
     all_e = models.EventConfig.objects.all()
     context = {"all_e": all_e}
+    memo = request.POST.get("memo")
+    memo = models.EventConfig(memo=memo)
+    obj = models.EventConfig(name=e, memo=memo)
+    obj.save()
     return render(request, "event/list.html", context)
 
 
 def sinnki(request):
-    # 新規予定追加のボタン
+    # 新規予定追加から作成ページへ
     return HttpResponseRedirect(reverse("event:form"))
 
 
