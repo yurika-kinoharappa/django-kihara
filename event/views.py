@@ -12,19 +12,20 @@ def form(request):
     return render(request, "event/form.html")
 
 
-def list(request):
+def create(request):
     # 入力とってリストを表示
     title = request.POST.get("title")
+    memo = request.POST.get("memo")
     if title is None or title == "":
         return HttpResponseRedirect(reverse("event:form"))
-    e = models.EventConfig(name=title)
-    # e.save()
+    e = models.EventConfig(name=title, memo=memo)
+    e.save()
+    return HttpResponseRedirect(reverse("event:list"))
+
+
+def list(request):
     all_e = models.EventConfig.objects.all()
     context = {"all_e": all_e}
-    memo = request.POST.get("memo")
-    memo = models.EventConfig(memo=memo)
-    obj = models.EventConfig(name=e, memo=memo)
-    obj.save()
     return render(request, "event/list.html", context)
 
 
@@ -41,3 +42,13 @@ def kiyaku(request):
 def kiyaku2(request):
     # 規約のページから作成ページへ
     return HttpResponseRedirect(reverse("event:form"))
+
+
+def shousai(requesut):
+    return render(requesut, "event/shousai.html")
+
+
+def delete(request, event_id):
+    event = models.EventConfig.objects.get(id=event_id)
+    event.delete()
+    return HttpResponseRedirect(reverse("event:list"))

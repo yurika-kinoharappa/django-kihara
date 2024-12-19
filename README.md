@@ -8,6 +8,6 @@ use events
 
 poetry shell
 
+python manage.py migrate
 
-日程などもとる
-リスト＿１を押したら詳細を表示
+python manage.py makemigrations event

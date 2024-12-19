@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'event/list_style.css' %}">
-    <title>出欠表一覧</title>
+    <title>Django課題</title>
 </head>
 
 <body>
@@ -14,18 +14,31 @@
     <hr>
     <div class="lst">
         {% for event in all_e %}
-        <ul>
-            <li><a href="#">{{ event.name }}</a></tr>
-        </ul>
-        <hr>
+        <div class="aaa">
+            <p>{{ event.name }}</p>
+            <form action="{% url 'event:shousai' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="詳細">
+            </form>
+            <form action="{% url 'event:delete' event.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="消去">
+            </form>
+            <form action="{% url 'event:shousai' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="編集">
+            </form>
+        </div>
         {% endfor %}
-    </div>
-    <div class="form">
-        <form action="{% url 'event:sinnki' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="新規出欠表を追加">
-        </form>
+        <div class="form">
+            <form action="{% url 'event:sinnki' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="新規出欠表を追加">
+            </form>
+        </div>
     </div>
 </body>
 
 </html>
+
+<!-- <a href="{% url 'event:shousai' %}"></a> -->
