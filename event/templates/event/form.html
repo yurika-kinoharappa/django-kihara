@@ -42,7 +42,7 @@
                         <li>8/8(火) 20:00～</li>
                     </div>
                 </div>
-                <textarea placeholder="候補の区切りは改行で判断されます。内容は直接編集できます。"></textarea>
+                <textarea placeholder="候補の区切りは改行で判断されます。内容は直接編集できます。" name="date"></textarea>
             </div>
             <div class="karenda-">
                 <input type="checkbox" id="tuika">
@@ -52,7 +52,7 @@
         </article>
         <footer>
             <p><a href="{% url 'event:kiyaku' %}">利用規約</a>に同意のうえ、</p>
-            <input type="submit" value="出欠表をつくる">
+            <input type="submit" value="出欠表をつくる" name="created_date">
         </footer>
     </form>
 </body>

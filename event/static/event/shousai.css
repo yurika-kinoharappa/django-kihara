@@ -1,0 +1,33 @@
+html {
+    text-align: center;
+    background-color: #f0fff0;
+    margin: 20px 2%;
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.form input {
+    padding: 15px 450px;
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: green;
+    border: none;
+    color: white;
+    margin-top: 50px;
+}
+
+.shousai {
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 25px;
+}
+
+hr {
+    margin-bottom: 50px;
+}

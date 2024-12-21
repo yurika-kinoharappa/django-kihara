@@ -8,30 +8,32 @@ from django.shortcuts import render
 
 
 def form(request):
-    # listのif文の到着点
+    # フォームを表示する
     return render(request, "event/form.html")
 
 
 def create(request):
-    # 入力とってリストを表示
+    # 入力とって登録
     title = request.POST.get("title")
     memo = request.POST.get("memo")
+    date = request.POST.get("date")
+    created_date = request.POST.get("created_date")
     if title is None or title == "":
         return HttpResponseRedirect(reverse("event:form"))
     e = models.EventConfig(name=title, memo=memo)
     e.save()
+    cd = models.CreatedDate(created_at=created_date)
+    cd.save()
+    d = models.Date(date=date)
+    d.save()
     return HttpResponseRedirect(reverse("event:list"))
 
 
 def list(request):
+    # リストを表示
     all_e = models.EventConfig.objects.all()
     context = {"all_e": all_e}
     return render(request, "event/list.html", context)
-
-
-def sinnki(request):
-    # 新規予定追加から作成ページへ
-    return HttpResponseRedirect(reverse("event:form"))
 
 
 def kiyaku(request):
@@ -39,13 +41,10 @@ def kiyaku(request):
     return render(request, "event/kiyaku.html")
 
 
-def kiyaku2(request):
-    # 規約のページから作成ページへ
-    return HttpResponseRedirect(reverse("event:form"))
-
-
-def shousai(requesut):
-    return render(requesut, "event/shousai.html")
+def shousai(requesut, event_id):
+    event = models.EventConfig.objects.get(id=event_id)
+    context = {"event": event}
+    return render(requesut, "event/shousai.html", context)
 
 
 def delete(request, event_id):
