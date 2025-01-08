@@ -7,10 +7,10 @@ class EventConfig(models.Model):
 
 
 class Date(models.Model):
-    date = models.CharField(max_length=200)
+    day = models.DateField(max_length=200)
     # 予定の日
 
 
 class CreatedDate(models.Model):
-    created_at = models.DateField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     # 予定作成日

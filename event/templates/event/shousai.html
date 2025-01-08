@@ -13,8 +13,10 @@
     <h1>詳細</h1>
     <hr>
     <div class="shousai">
+        <p>イベントID：{{ event.id }}</p>
         <p>イベント名：{{ event.name }}</p>
         <p>メモ：{{ event.memo }}</p>
+        <p>作成日：{{ createddate.created_at }}</p>
     </div>
     <div class="form">
         <form action="{% url 'event:form' %}" method="post">
