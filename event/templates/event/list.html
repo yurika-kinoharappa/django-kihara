@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="henshuu">
-            <form action="{% url 'event:delete' event.id %}" method="post">
+            <form action="{% url 'event:change' event.id %}" method="post">
                 {% csrf_token %}
                 <input type="submit" value="編集">
             </form>

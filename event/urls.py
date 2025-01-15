@@ -11,4 +11,5 @@ urlpatterns = [
     path("kiyaku/", views.kiyaku, name="kiyaku"),
     path("shousai/<int:event_id>", views.shousai, name="shousai"),
     path("delete/<int:event_id>", views.delete, name="delete"),
+    path("change/<int:event_id>", views.change, name="change"),
 ]

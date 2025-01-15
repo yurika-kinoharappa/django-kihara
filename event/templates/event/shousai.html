@@ -16,7 +16,11 @@
         <p>イベントID：{{ event.id }}</p>
         <p>イベント名：{{ event.name }}</p>
         <p>メモ：{{ event.memo }}</p>
-        <p>作成日：{{ createddate.created_at }}</p>
+        <p>予定作成日：{{ createddate.created_at }}</p>
+        <p>イベント予定日：{{ date.day }}</p>
+        <!-- {% for d in date.day %}
+        <p>イベント予定日：{{ d }}</p>
+        {% endfor %} -->
     </div>
     <div class="form">
         <form action="{% url 'event:form' %}" method="post">

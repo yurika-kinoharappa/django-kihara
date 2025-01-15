@@ -3,11 +3,11 @@ from django.db import models
 
 class EventConfig(models.Model):
     name = models.CharField(max_length=200)
-    memo = models.CharField(max_length=200)
+    memo = models.CharField(max_length=200, null=True)
 
 
 class Date(models.Model):
-    day = models.DateField(max_length=200)
+    day = models.CharField(max_length=200)
     # 予定の日
 
 

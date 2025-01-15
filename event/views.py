@@ -20,11 +20,6 @@ def create(request):
     created_date = request.POST.get("created_date")
     if title is None or title == "":
         return HttpResponseRedirect(reverse("event:form"))
-    a = date.split("-")
-    if len(a) == 3 and len(a[0]) == 4 and len(a[1]) >= 1 and len(a[2]) >= 1:
-        pass
-    else:
-        return HttpResponseRedirect(reverse("event:form"))
     e = models.EventConfig(name=title, memo=memo)
     e.save()
     cd = models.CreatedDate(created_at=created_date)
@@ -50,11 +45,16 @@ def shousai(requesut, event_id):
     # 詳細
     event = models.EventConfig.objects.get(id=event_id)
     createddate = models.CreatedDate.objects.get(id=event_id)
-    context = {"event": event, "createddate": createddate}
+    date = models.Date.objects.get(id=event_id)
+    context = {"event": event, "createddate": createddate, "date": date}
     return render(requesut, "event/shousai.html", context)
 
 
 def delete(request, event_id):
     event = models.EventConfig.objects.get(id=event_id)
     event.delete()
+    return HttpResponseRedirect(reverse("event:list"))
+
+
+def change(requet, event_id):
     return HttpResponseRedirect(reverse("event:list"))
