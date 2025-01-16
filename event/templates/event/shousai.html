@@ -16,11 +16,9 @@
         <p>イベントID：{{ event.id }}</p>
         <p>イベント名：{{ event.name }}</p>
         <p>メモ：{{ event.memo }}</p>
-        <p>予定作成日：{{ createddate.created_at }}</p>
-        <p>イベント予定日：{{ date.day }}</p>
-        <!-- {% for d in date.day %}
-        <p>イベント予定日：{{ d }}</p>
-        {% endfor %} -->
+        <p>予定作成日：{{ a }}年{{b}}月{{c}}日{{ week }}</p>
+        <p>イベント予定日：{{ Y }}年{{ M }}月{{ D }}日{{ w }}</p>
+        <p>開始予定時間：{{ time1 }}　終了予定時間：{{ time2 }}</p>
     </div>
     <div class="form">
         <form action="{% url 'event:form' %}" method="post">

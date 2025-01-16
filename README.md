@@ -6,6 +6,10 @@ mysql -u root
 
 use events
 
+poetry shell
+
+
+2002-10-10 20:00 10:10
 
 
 select * from event_eventconfig;
@@ -22,15 +26,12 @@ truncate table event_createddate;
 truncate table event_date;
 
 
-poetry shell
-
 python manage.py makemigrations event
 
 python manage.py migrate
 
 
-時間を登録
-時間を詳細に表示
 
-詳細を見やすく（p.m.などを24時間表記に）
+
 日付を複数登録
+編集できる

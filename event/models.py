@@ -7,8 +7,11 @@ class EventConfig(models.Model):
 
 
 class Date(models.Model):
-    day = models.CharField(max_length=200)
+    day = models.DateField(max_length=200, null=False)
     # 予定の日
+    time1 = models.TimeField(max_length=200, null=True)
+    time2 = models.TimeField(max_length=200, null=True)
+    # 予定の時間
 
 
 class CreatedDate(models.Model):

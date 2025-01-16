@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from django.shortcuts import render
+import datetime
 
 
 def form(request):
@@ -24,8 +25,9 @@ def create(request):
     e.save()
     cd = models.CreatedDate(created_at=created_date)
     cd.save()
-    d = models.Date(day=date)
-    d.save()
+    d = date.split()
+    dat = models.Date(day=d[0], time1=str(d[1]), time2=str(d[2]))
+    dat.save()
     return HttpResponseRedirect(reverse("event:list"))
 
 
@@ -44,9 +46,38 @@ def kiyaku(request):
 def shousai(requesut, event_id):
     # 詳細
     event = models.EventConfig.objects.get(id=event_id)
-    createddate = models.CreatedDate.objects.get(id=event_id)
     date = models.Date.objects.get(id=event_id)
-    context = {"event": event, "createddate": createddate, "date": date}
+    d1 = date.time1.strftime("%H時%M分")
+    d2 = date.time2.strftime("%H時%M分")
+    Y, M, D = date.day.split("-")
+    Y = int(Y)
+    M = int(M)
+    D = int(D)
+    ddd = datetime.date(Y, M, D)
+    w = ddd.strftime("%a")
+    createddate = models.CreatedDate.objects.get(id=event_id)
+    c = createddate.created_at.strftime("%Y-%m-%d")
+    a, b, c = c.split("-")
+    a = int(a)
+    b = int(b)
+    c = int(c)
+    dd = datetime.date(a, b, c)
+    week = dd.strftime("%a")
+    context = {
+        "event": event,
+        "a": a,
+        "b": b,
+        "c": c,
+        "Y": Y,
+        "M": M,
+        "D": D,
+        "createddate": c,
+        "date": date,
+        "time1": d1,
+        "time2": d2,
+        "week": week,
+        "w": w,
+    }
     return render(requesut, "event/shousai.html", context)
 
 
