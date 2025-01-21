@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form method="post" action="{% url 'event:create' %}" method="post">
+    <form method="post" action="{% url 'event:create' %}">
         {% csrf_token %}
         <h1>30秒で作れる！カンタン出欠表</h1>
         <hr>
@@ -24,7 +24,7 @@
                 <input type="text" placeholder="今期もお疲れ様飲み会" name="title">
                 <div class="memo">
                     <p>メモ(任意)</p>
-                    <textarea placeholder="例) 飲み会の日程調節をしましょう！出欠〆切は◯日 など" name="memo"></textarea>
+                    <textarea placeholder="例）飲み会の日程調節をしましょう！出欠〆切は◯日 など" name="memo"></textarea>
                 </div>
             </div>
             <div class="nittei">
