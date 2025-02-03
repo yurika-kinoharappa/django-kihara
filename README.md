@@ -31,7 +31,3 @@ python manage.py makemigrations event
 python manage.py migrate
 
 
-
-
-日付を複数登録
-編集できる

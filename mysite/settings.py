@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "todo1.apps.Todo1Config",
     "todo2.apps.Todo2Config",
     "event.apps.EventConfig",
+    "santori.apps.SantoriConfig",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
