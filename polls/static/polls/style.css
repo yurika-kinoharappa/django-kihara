@@ -1,7 +1,9 @@
 li a {
-    color: green;
+    text-decoration: none;
 }
 
 body {
-    background: white url("images/background.png") no-repeat;
+    background: white url("/static/polls/images/312C4A97-E590-435D-8F4E-789CA399E230_1_102_o.jpeg") no-repeat;
+    background-size: 50%;
+    background-position: center;
 }
