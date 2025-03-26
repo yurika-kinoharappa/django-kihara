@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -35,7 +37,6 @@ INSTALLED_APPS = [
     "todo1.apps.Todo1Config",
     "todo2.apps.Todo2Config",
     "event.apps.EventConfig",
-    "santori.apps.SantoriConfig",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
